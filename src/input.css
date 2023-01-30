@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  img {
+    @apply pointer-events-none self-center object-cover;
+  }
+
+  .client {
+    @apply w-[75px] md:w-[100px];
+  }
+
+  nav a {
+    @apply text-neutral-Medium-Gray font-medium hover:text-neutral-Almost-Black;
+  }
+
+  #navLinks {
+    @apply before:absolute before:w-[45%] before:h-full before:bg-neutral-Almost-Black before:bg-opacity-50 before:top-0 before:right-full md:before:hidden;
+  }
+
+  #navLinks ul {
+    @apply flex flex-col md:flex-row md:gap-6;
+  }
+
+  #navLinks ul a {
+    @apply flex gap-3 p-2;
+  }
+
+  #submenu {
+    @apply md:!flex-col md:absolute md:bg-white md:shadow-2xl md:p-6 md:rounded-xl md:w-max md:!gap-0;
+  }
+
+  #submenu a img {
+    @apply min-w-[1rem];
+  }
+
+  #dropBtn.active {
+    @apply text-neutral-Almost-Black;
+  }
+
+  #dropBtn.active > img {
+    @apply rotate-180;
+  }
+}

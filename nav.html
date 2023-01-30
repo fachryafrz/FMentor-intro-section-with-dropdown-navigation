@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- CSS -->
+    <link href="./dist/output.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="font-epilogue min-h-screen bg-neutral-Almost-White mx-auto max-w-[375px] md:max-w-full"
+  >
+    <!-- Nav Start -->
+    <header>
+      <nav class="flex items-center justify-between relative p-4 md:pt-0">
+        <a href="#">
+          <img src="./images/logo.svg" alt="snap" />
+        </a>
+        <button id="openMenu" class="md:hidden">
+          <img src="./images/icon-menu.svg" alt="Menu" />
+        </button>
+        <div
+          id="navLinks"
+          class="z-50 absolute bg-white top-0 right-0 h-screen w-[70%] p-4 flex flex-col gap-4 md:static md:!flex md:w-full md:flex-row md:h-auto md:bg-transparent"
+        >
+          <button class="self-end w-fit md:hidden" id="closeMenu">
+            <img src="./images/icon-close-menu.svg" alt="Close Menu" />
+          </button>
+          <ul>
+            <li id="features" class="relative">
+              <a href="#" id="dropBtn">
+                Features
+                <img src="./images/icon-arrow-down.svg" alt="Arrow Down" />
+              </a>
+              <ul class="submenu-1 ml-6 md:ml-0 md:right-0" id="submenu">
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-todo.svg" alt="" /> Todo List
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-calendar.svg" alt="" /> Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-reminders.svg" alt="" /> Reminders
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-planning.svg" alt="" /> Planning
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li id="company" class="relative">
+              <a href="#" id="dropBtn">
+                Company
+                <img src="./images/icon-arrow-down.svg" alt="Arrow Down" />
+              </a>
+              <ul class="submenu-2 ml-6 md:ml-0" id="submenu">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <ul class="flex ml-auto">
+            <li><a href="#" class="justify-center">Login</a></li>
+            <li>
+              <a
+                href="#"
+                class="justify-center border-2 border-neutral-Medium-Gray hover:border-neutral-Almost-Black rounded-xl active:bg-neutral-Almost-Black active:text-white md:!px-6 md:border-neutral-Almost-White"
+                >Register</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Nav End -->
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#navLinks").hide();
+        $(".submenu-1").hide();
+        $(".submenu-2").hide();
+
+        $("#openMenu").click(function () {
+          $("#navLinks").show();
+        });
+
+        $("#closeMenu").click(function () {
+          $("#navLinks").hide();
+        });
+
+        $("#features").hover(
+          function () {
+            $(this).find(".submenu-1").slideDown();
+            $(this).find("#dropBtn").addClass("active");
+          },
+          function () {
+            $(this).find(".submenu-1").slideUp();
+            $(this).find("#dropBtn").removeClass("active");
+            $(this).find("#dropBtn").removeAttr("class");
+          }
+        );
+
+        $("#company").hover(
+          function () {
+            $(this).find(".submenu-2").slideDown();
+            $(this).find("#dropBtn").addClass("active");
+          },
+          function () {
+            $(this).find(".submenu-2").slideUp();
+            $(this).find("#dropBtn").removeClass("active");
+            $(this).find("#dropBtn").removeAttr("class");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

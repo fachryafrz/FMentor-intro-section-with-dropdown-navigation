@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- CSS -->
+    <link href="./dist/output.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-epilogue min-h-screen bg-neutral-Almost-White mx-auto">
+    <!-- Nav Start -->
+    <header role="navigation">
+      <nav
+        class="flex items-center justify-between relative p-4 md:pt-0 md:text-sm"
+      >
+        <a href="#">
+          <img src="./images/logo.svg" alt="snap" />
+        </a>
+        <button id="openMenu" class="md:hidden">
+          <img src="./images/icon-menu.svg" alt="Menu" />
+        </button>
+        <div
+          id="navLinks"
+          class="z-50 fixed bg-white top-0 right-0 h-screen w-[70%] p-4 flex flex-col gap-4 md:static md:!flex md:w-full md:flex-row md:h-auto md:bg-transparent lg:ml-8"
+        >
+          <button class="self-end w-fit md:hidden" id="closeMenu">
+            <img src="./images/icon-close-menu.svg" alt="Close Menu" />
+          </button>
+          <ul>
+            <li id="features" class="relative">
+              <a href="#" id="dropBtn">
+                Features
+                <img src="./images/icon-arrow-down.svg" alt="Arrow Down" />
+              </a>
+              <ul class="submenu-1 ml-6 md:ml-0 md:right-0" id="submenu">
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-todo.svg" alt="" /> Todo List
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-calendar.svg" alt="" /> Calendar
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-reminders.svg" alt="" /> Reminders
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./images/icon-planning.svg" alt="" /> Planning
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li id="company" class="relative">
+              <a href="#" id="dropBtn">
+                Company
+                <img src="./images/icon-arrow-down.svg" alt="Arrow Down" />
+              </a>
+              <ul class="submenu-2 ml-6 md:ml-0" id="submenu">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <ul class="flex md:ml-auto">
+            <li><a href="#" class="justify-center">Login</a></li>
+            <li>
+              <a
+                href="#"
+                class="justify-center border-2 border-neutral-Medium-Gray hover:border-neutral-Almost-Black rounded-xl active:bg-neutral-Almost-Black active:text-white md:!px-6 md:border-neutral-Almost-White"
+                >Register</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Nav End -->
+
+    <!-- Contents Start -->
+    <main
+      class="flex flex-col md:grid md:grid-cols-2 gap-16 md:items-center md:px-4 md:max-w-6xl md:mx-auto md:pt-8"
+    >
+      <figure class="flex justify-center md:order-2 md:justify-end">
+        <!-- Hero Mobile -->
+        <img
+          src="./images/image-hero-mobile.png"
+          alt="snap"
+          class="md:hidden"
+        />
+
+        <!-- Hero Desktop -->
+        <img
+          src="./images/image-hero-desktop.png"
+          alt="snap"
+          class="hidden md:block max-w-[400px] w-full h-full"
+        />
+      </figure>
+      <div
+        class="flex flex-col gap-4 md:gap-8 items-center md:items-start text-center md:text-left md:h-full md:pt-16"
+      >
+        <h1 class="font-bold text-4xl md:text-6xl lg:text-7xl">
+          Make <br class="hidden md:block" />
+          remote work
+        </h1>
+        <p
+          class="px-4 md:px-0 text-neutral-Medium-Gray font-medium tracking-tight md:text-[18px] md:max-w-md"
+        >
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <a
+          href="#"
+          class="px-6 py-4 text-white border border-neutral-Almost-Black font-medium bg-neutral-Almost-Black rounded-xl text-sm md:text-[18px] md:mt-4 hover:bg-white hover:text-neutral-Almost-Black"
+          >Learn more</a
+        >
+        <div class="w-full flex justify-between px-2 mt-4 md:mt-auto">
+          <img src="./images/client-databiz.svg" alt="databiz" class="client" />
+          <img
+            src="./images/client-audiophile.svg"
+            alt="audiophile"
+            class="client"
+          />
+          <img src="./images/client-meet.svg" alt="meet" class="client" />
+          <img src="./images/client-maker.svg" alt="maker" class="client" />
+        </div>
+      </div>
+    </main>
+    <!-- Contents End -->
+
+    <!-- Footer Start -->
+    <footer class="flex justify-center text-center mt-12 text-sm">
+      <div class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="font-bold"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          href="https://www.frontendmentor.io/profile/fachryafrz"
+          target="_blank"
+          class="font-bold"
+          >fachryafrz</a
+        >.
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#navLinks").hide();
+        $(".submenu-1").hide();
+        $(".submenu-2").hide();
+
+        $("#openMenu").click(function () {
+          $("#navLinks").show();
+        });
+
+        $("#closeMenu").click(function () {
+          $("#navLinks").hide();
+        });
+
+        $("#features").hover(
+          function () {
+            $(this).find(".submenu-1").slideDown();
+            $(this).find("#dropBtn").addClass("active");
+          },
+          function () {
+            $(this).find(".submenu-1").slideUp();
+            $(this).find("#dropBtn").removeClass("active");
+            $(this).find("#dropBtn").removeAttr("class");
+          }
+        );
+
+        $("#company").hover(
+          function () {
+            $(this).find(".submenu-2").slideDown();
+            $(this).find("#dropBtn").addClass("active");
+          },
+          function () {
+            $(this).find(".submenu-2").slideUp();
+            $(this).find("#dropBtn").removeClass("active");
+            $(this).find("#dropBtn").removeAttr("class");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
